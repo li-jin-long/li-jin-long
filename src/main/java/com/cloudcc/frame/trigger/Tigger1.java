@@ -6,7 +6,10 @@ import com.cloudcc.deveditor.core.ServiceResult;
 import com.cloudcc.deveditor.trigger.TriggerEditor;
 
 import java.util.List;
-
+/*
+* 触发器，
+* 相当于service
+* */
 public class Tigger1  extends TriggerEditor {
 
     public void 打印用户名字(){
