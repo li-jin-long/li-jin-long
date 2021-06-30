@@ -7,7 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class FrameApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(FrameApplication.class, args);
+        String a = "100";
+       Integer b=  Integer.parseInt(a);
+        System.out.println(b);
+
     }
 
 }
