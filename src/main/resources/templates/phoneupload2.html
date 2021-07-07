@@ -1,10 +1,223 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="/staticResource.action?m=getResource&resourceId=1625105766393gj50WkZC">
 </head>
+
 <body>
-放html文件的
+<style>
+    @import url("//unpkg.com/element-plus/lib/theme-chalk/index.css");
+</style>
+<script src="//unpkg.com/vue/dist/vue.js"></script>
+<script src="//unpkg.com/element-plus/lib/theme-chalk/index.css"></script>
+<script src="//unpkg.com/element-ui@2.15.3/lib/index.js"></script>
+<style>
+    .el-table .warning-row {
+        background: oldlace;
+    }
+
+    .el-table .success-row {
+        background: #f0f9eb;
+    }
+
+    .divcss5-right {
+        float: right
+    }
+
+    input {
+        outline-style: none;
+        width: 200px;
+        height: 30px;
+        /*background: #ccc;*/
+        border: 1px solid #eee;
+        border-radius: 15px; /*//圆角设置*/
+        /*outline-color: aqua;  !*点击后显示边框*!*/
+    }
+
+    .input_myText-indent {
+        text-indent: 12px; /*首行空几个位置*/
+    }
+
+    .two {
+        text-indent: 5px;
+    }
+
+    .mySubMitInput {
+        width: 100px;
+        color: beige;
+        background-color: #5882FA;
+    }
+
+    .myDivTop {
+        margin-top: 50px;
+    }
+
+</style>
+<br>
+<div class="divcss5-right">
+    <form action="/">
+        <table>
+            <p>
+                <input name="username" type="name" placeholder="名字" class="input_myText-indent">
+                <input name="phone" type="phone" placeholder="电话" class="input_myText-indent">
+                <input type="datetime-local" name="startTime" placeholder="开始时间" class="two">
+                <input type="datetime-local" name="endTime" placeholder="结束时间" class="two">
+                <input type="submit" value="搜索" class="mySubMitInput">
+                <a href="https://k8smt01.cloudcc.com/customize/page/f47f6af546/zdyymhtml.jsp?name=zdyymhtml"
+                   download>下载</a>
+            </p>
+        </table>
+    </form>
+</div>
+
+<div id="app" class="myDivTop">
+    <template>
+        <el-table
+                :data="tableData"
+                stripe
+                style="width: 100%">
+            <el-table-column
+                    prop="createdate"
+                    label="日期"
+                    width="180">
+            </el-table-column>
+            <el-table-column
+                    prop="name"
+                    label="姓名"
+                    width="180">
+            </el-table-column>
+            <el-table-column
+                    prop="address"
+                    label="地址">
+            </el-table-column>
+            <el-table-column
+                    prop="phone"
+                    label="电话">
+            </el-table-column>
+            <el-table-column
+                    prop="moeny"
+                    label="总金额">
+            </el-table-column>
+        </el-table>
+    </template>
+    <el-pagination
+            background
+            layout="prev, pager, next"
+            :current-page.sync="currentPage"
+            :page-size="pageLimit"
+            :total="dataTotalLength">
+    </el-pagination>
+</div>
+
+</div>
+
 </body>
 </html>
+<script>
+    let list = [{
+        "address": "四川成都",
+        "phone": "54796312449",
+        "name": "永恩",
+        "createdate": "2021-06-29 16:30:15",
+        "moeny": ""
+    }, {
+        "address": "四川成都",
+        "phone": "54796312449",
+        "name": "永恩",
+        "createdate": "2021-06-29 10:29:21",
+        "moeny": ""
+    }, {
+        "address": "四川成都",
+        "phone": "54796312449",
+        "name": "永恩",
+        "createdate": "2021-06-30 13:48:48",
+        "moeny": ""
+    }, {
+        "address": "四川成都",
+        "phone": "54796312449",
+        "name": "永恩",
+        "createdate": "2021-06-30 17:19:09",
+        "moeny": "450000.0"
+    }, {
+        "address": "四川成都",
+        "phone": "54796312449",
+        "name": "永恩",
+        "createdate": "2021-06-30 17:21:25",
+        "moeny": "300.0"
+    }, {
+        "address": "四川成都",
+        "phone": "54796312449",
+        "name": "永恩",
+        "createdate": "2021-06-30 13:56:03",
+        "moeny": ""
+    }, {
+        "address": "四川成都",
+        "phone": "54796312449",
+        "name": "永恩",
+        "createdate": "2021-06-29 15:18:42",
+        "moeny": ""
+    }, {
+        "address": "四川成都",
+        "phone": "54796312449",
+        "name": "永恩",
+        "createdate": "2021-06-30 14:32:36",
+        "moeny": ""
+    }, {
+        "address": "四川成都",
+        "phone": "54796312449",
+        "name": "永恩",
+        "createdate": "2021-06-29 10:05:02",
+        "moeny": ""
+    }, {
+        "address": "四川成都",
+        "phone": "54796312449",
+        "name": "永恩",
+        "createdate": "2021-06-30 17:04:18",
+        "moeny": "15000.0"
+    }, {
+        "address": "四川成都",
+        "phone": "54796312449",
+        "name": "永恩",
+        "createdate": "2021-06-30 15:06:45",
+        "moeny": ""
+    }, {
+        "address": "四川成都",
+        "phone": "54796312449",
+        "name": "永恩",
+        "createdate": "2021-06-30 11:31:43",
+        "moeny": ""
+    }, {
+        "address": "四川成都",
+        "phone": "54796312449",
+        "name": "永恩",
+        "createdate": "2021-06-30 15:09:05",
+        "moeny": "30000"
+    }, {
+        "address": "四川成都",
+        "phone": "54796312449",
+        "name": "永恩",
+        "createdate": "2021-06-30 11:35:49",
+        "moeny": ""
+    }]
+    var Main = {
+        data() {
+            return {
+                tableData: list,
+                dataTotalLength: list.length, //数据总量total
+                currentPage: 1, //页码
+                pageLimit: 5, //每页的数据量
+            }
+        }
+    }
+
+    // const app = Vue.createApp(Main);
+    // app.use(ElementPlus);
+    var Ctor = Vue.extend(Main)
+    new Ctor().$mount('#app')
+
+</script>

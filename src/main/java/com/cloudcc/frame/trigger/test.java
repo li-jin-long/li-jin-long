@@ -36,5 +36,7 @@ public class test extends TriggerEditor {
             String money = record_new.get("money") == null ? "" : record_new.get("money") + "";//金额
             System.out.println(money);
     }
+
+
 }
 
