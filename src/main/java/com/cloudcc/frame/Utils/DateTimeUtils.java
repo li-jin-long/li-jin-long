@@ -1,4 +1,8 @@
 package com.cloudcc.frame.Utils;
+
+
+import org.springframework.web.client.RestTemplate;
+
 import static java.util.Calendar.DATE;
 import static java.util.Calendar.DAY_OF_MONTH;
 import static java.util.Calendar.MONTH;
@@ -132,6 +136,9 @@ public class DateTimeUtils {
         }
 
         public static String addDays(String time,int i) {
+            RestTemplate restTemplate = new RestTemplate();
+            String s = restTemplate.postForObject("http://192.168.1.13:80/ner", "", String.class);
+
             Calendar date = getInstance();
             date.setTime(getDateTimeYmd(time));
             date.set(DATE, date.get(DATE) + i);
